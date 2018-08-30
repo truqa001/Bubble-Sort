@@ -1,15 +1,17 @@
 //init variables for a column
 let array;
+let arraySize;
 let X;
 const WIDTH = 5;
 
+let is_sorted = true;
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     frameRate(8);
 
     //number of columns
-    let arraySize = parseInt(width/WIDTH);
+    arraySize = parseInt(width/WIDTH);
     array = new Array(arraySize);
 
     //init heights for objects
@@ -23,6 +25,7 @@ function setup() {
 
 }
 
+let count=0;
 //update frame
 function draw() {
    /* xPos = xPos + 1;
@@ -31,26 +34,33 @@ function draw() {
 
     X = 0;
 
+    if (count >= arraySize){
+        noLoop();
+    }
+
+    //render columns everytime finish a sort
+    renderColumns();
+
+
+
     //bubble sort
-   for (var i=0;i<array.length;i++){
+    for (var j=0;j<array.length;j++){
+        if (array[j] > array[j+1]){
+            let temp = array[j];
+            array[j] = array[j+1];
+            array[j+1] = temp;
 
-       //init rect objects each time sort
-       for (i; i<array.length;i++){
-           rect(X,height-array[i],WIDTH,array[i]);
-           X += WIDTH;
-       }
+        }
+    }
 
-       for (var j=0;j<array.length;j++){
-           if (array[j] > array[j+1]){
-               let temp = array[j];
-               array[j] = array[j+1];
-               array[j+1] = temp;
+    count++;
+}
 
-           }
-       }
-
-   }
-
+function renderColumns(){
+    for (var i=0; i<array.length;i++){
+        rect(X,height-array[i],WIDTH,array[i]);
+        X += WIDTH;
+    }
 
 }
 
