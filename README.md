@@ -1,5 +1,5 @@
 # Bubble-Sort
-Bubble Sort Algorithm in a graphical visulisation.
+Bubble Sort Algorithm in a graphical visualisation.
 
 ### Project Environment
 * P5.js (https://p5js.org/) - JavaScript library
