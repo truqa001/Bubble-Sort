@@ -4,12 +4,6 @@ let X;
 const WIDTH = 5;
 
 
-//button variables
-const BUTTON_X = 10;
-const BUTTON_Y = 30;
-const BUTTON_WIDTH = 100;
-const BUTTON_HEIGHT = 40;
-
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
     frameRate(8);
@@ -23,22 +17,6 @@ function setup() {
         let HEIGHT = parseInt(random(10,height-100));
         array[i] = HEIGHT;
     }
-
-    //init buttons
-    let start_button = createButton("Start");
-    start_button.size(BUTTON_WIDTH,BUTTON_HEIGHT);
-    start_button.position(BUTTON_X,BUTTON_Y);
-    start_button.mouseClicked(start);
-
-    let stop_button = createButton("Stop");
-    stop_button.size(BUTTON_WIDTH,BUTTON_HEIGHT);
-    stop_button.position(BUTTON_X+BUTTON_WIDTH,BUTTON_Y);
-    stop_button.mouseClicked(stop);
-
-    let reset_button = createButton("Reset");
-    reset_button.size(BUTTON_WIDTH,BUTTON_HEIGHT);
-    reset_button.position(BUTTON_X+BUTTON_WIDTH*2,BUTTON_Y);
-    reset_button.mouseClicked(reset);
 
     noLoop();
 
