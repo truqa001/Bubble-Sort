@@ -78,4 +78,3 @@ function pause() {
     document.getElementById('pause').style.display = "none";
     noLoop();
 }
-
