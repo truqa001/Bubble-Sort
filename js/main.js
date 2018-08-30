@@ -36,7 +36,6 @@ function draw() {
 
        //init rect objects each time sort
        for (i; i<array.length;i++){
-
            rect(X,height-array[i],WIDTH,array[i]);
            X += WIDTH;
        }
@@ -50,7 +49,8 @@ function draw() {
            }
        }
 
-    }
+   }
+
 
 }
 
@@ -60,8 +60,13 @@ function reset(){
     draw();
 }
 function start(){
+    document.getElementById('start').style.display = "none";
+    document.getElementById('pause').style.display = "block";
     loop();
 }
-function stop() {
+function pause() {
+    document.getElementById('start').style.display = "block";
+    document.getElementById('pause').style.display = "none";
     noLoop();
 }
+
