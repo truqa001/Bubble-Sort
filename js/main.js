@@ -65,6 +65,8 @@ function renderColumns(){
 
 //buttons functions
 function reset(){
+    document.getElementById('start').style.display = "block";
+    document.getElementById('pause').style.display = "none";
     setup();
     draw();
 }
