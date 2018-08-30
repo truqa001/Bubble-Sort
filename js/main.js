@@ -4,7 +4,6 @@ let arraySize;
 let X;
 const WIDTH = 5;
 
-let is_sorted = true;
 
 function setup() {
     createCanvas(window.innerWidth, window.innerHeight);
