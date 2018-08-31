@@ -3,11 +3,14 @@ let array;
 let arraySize;
 let X;
 const WIDTH = 5;
-
+let count;
 
 function setup() {
-    createCanvas(window.innerWidth, window.innerHeight);
-    frameRate(8);
+    createCanvas(window.innerWidth-15, window.innerHeight);
+    count=0;
+    frameRate(10);
+    document.getElementById("complete").style.display = "none";
+
 
     //number of columns
     arraySize = parseInt(width/WIDTH);
@@ -24,7 +27,7 @@ function setup() {
 
 }
 
-let count=0;
+
 //update frame
 function draw() {
    /* xPos = xPos + 1;
@@ -34,6 +37,8 @@ function draw() {
     X = 0;
 
     if (count >= arraySize){
+        document.getElementById("complete").style.display = "block";
+        pausing();
         noLoop();
     }
 
@@ -65,18 +70,24 @@ function renderColumns(){
 
 //buttons functions
 function reset(){
-    document.getElementById('start').style.display = "block";
-    document.getElementById('pause').style.display = "none";
+    pausing();
     setup();
     draw();
 }
 function start(){
-    document.getElementById('start').style.display = "none";
-    document.getElementById('pause').style.display = "block";
+    playing();
     loop();
 }
 function pause() {
+    pausing();
+    noLoop();
+}
+
+function playing(){
+    document.getElementById('start').style.display = "none";
+    document.getElementById('pause').style.display = "block";
+}
+function pausing(){
     document.getElementById('start').style.display = "block";
     document.getElementById('pause').style.display = "none";
-    noLoop();
 }
