@@ -32,7 +32,7 @@ function setup() {
 function draw() {
    /* xPos = xPos + 1;
     line(xPos, 0 , xPos, height);*/
-    background(0);
+    background('#13001c');
 
     X = 0;
 
