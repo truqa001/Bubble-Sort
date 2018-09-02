@@ -6,10 +6,10 @@ const WIDTH = 5;
 let count;
 
 function setup() {
-    createCanvas(window.innerWidth-15, window.innerHeight);
+    createCanvas(window.innerWidth, window.innerHeight);
     count=0;
     frameRate(10);
-    document.getElementById("complete").style.display = "none";
+    hideElement("completed")
 
 
     //number of columns
@@ -37,7 +37,7 @@ function draw() {
     X = 0;
 
     if (count >= arraySize){
-        document.getElementById("complete").style.display = "block";
+        showElement("completed")
         pausing();
         noLoop();
     }
@@ -84,10 +84,17 @@ function pause() {
 }
 
 function playing(){
-    document.getElementById('start').style.display = "none";
-    document.getElementById('pause').style.display = "block";
+    hideElement("start");
+    showElement("pause");
 }
 function pausing(){
-    document.getElementById('start').style.display = "block";
-    document.getElementById('pause').style.display = "none";
+    showElement("start");
+    hideElement("pause");
+}
+
+function showElement(id){
+    document.getElementById(id).style.display = "block";
+}
+function hideElement(id) {
+    document.getElementById(id).style.display = "none";
 }
