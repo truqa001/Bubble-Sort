@@ -1,0 +1,21 @@
+{
+  "homepage": "https://github.com/truqa001/Bubble-Sort#readme",
+  "name": "bubble-sort",
+  "version": "1.0.0",
+  "description": "bubble sort visualisation",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/truqa001/Bubble-Sort.git"
+  },
+  "author": "Anthony Truong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/truqa001/Bubble-Sort/issues"
+  }
+}
